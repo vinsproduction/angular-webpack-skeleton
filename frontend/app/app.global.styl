@@ -1,0 +1,60 @@
+
+
+import-font('calibri', 'Calibri')
+
+*
+	-webkit-font-smoothing antialiased
+	// -moz-osx-font-smoothing grayscale
+
+/* _________ GLOBAL _________ */
+
+body, figure, button, div, fieldset, form, h1, h2, h3, h4, h5, h6, hr, html, img, li, p, pre, table, td, th, tr, ul
+	margin 0
+	padding 0
+
+p
+	font 14px $mainFont
+
+h1
+	font 36px $mainFont
+h2
+	font 32px $mainFont
+h3
+	font 28px $mainFont
+h4
+	font 24px $mainFont
+h5
+	font 20px $mainFont
+h6
+	font 16px $mainFont
+
+ul
+	list-style-type none
+
+a
+	text-decoration none
+	outline 0
+
+a:hover, a:active, a:focus
+	outline 0
+
+input:focus, textarea:focus, select:focus, button:focus
+	outline 0
+
+input:-webkit-autofill
+	-webkit-box-shadow: 0 0 0px 50px #ededed inset
+	
+
+pre
+	position relative
+	top 0
+	z-index 9999
+	background #000
+	color #13a86f
+	opacity 0.9
+	width 100%
+	height 100%
+	overflow auto
+	&.i
+		position relative
+		height auto

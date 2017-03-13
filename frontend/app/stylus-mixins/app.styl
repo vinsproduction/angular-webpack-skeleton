@@ -1,0 +1,71 @@
+
+
+$maxWidth 	= 1000 - 40*2 //1520
+$mainWidth 	= 960
+$minWidth 	= 960
+
+$headerHeight 	= 100
+$contentHeight 	= 500 // min height!
+$footerHeight 	= 100
+
+
+$mainFont = 'Calibri'
+
+
+$mainBgColor = #FFF
+
+
+import-font(originalname, newname)
+
+	@font-face
+		font-family newname
+		src url('~fonts/' + originalname +'.eot')
+		src url('~fonts/' + originalname +'.eot?#iefix') format('embedded-opentype'), url('~fonts/' + originalname +'.woff') format('woff'), url('~fonts/' + originalname +'.ttf') format('truetype')
+		font-weight normal
+		font-style normal
+
+
+bg(filename, arguments=false)
+	if !arguments
+		arguments = center center
+	background url('~img/' + filename) no-repeat arguments
+
+
+// Buttons		
+
+btn(w=false,h=false)
+
+	if w
+		width (w)px
+	else
+		padding-left 15px
+		padding-right 15px
+
+	if h
+		height (h)px
+	else
+		padding-top 10px
+		padding-bottom 10px
+
+
+	display flex
+	justify-content center
+	align-items center
+	cursor pointer
+	borderbox()
+	transition background 0.3s
+
+btn-1(w=false,h=false)
+	btn(w,h)
+	border-radius 6px
+	background #9f9b87
+	font 20px $mainFont
+	text-transform uppercase
+	color #FFF
+	
+	&:hover
+		background #807d6b
+
+
+
+	

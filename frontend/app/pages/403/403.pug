@@ -1,0 +1,8 @@
+
+
+.main-container__center(show-delay)
+
+	.inner
+		h1 к сожалению, доступ к странице ограничен
+		p.desc(ng-bind="$resolve.$stateParams.error")
+		p.link: a(ui-sref="app.page.home") Перейти на главную

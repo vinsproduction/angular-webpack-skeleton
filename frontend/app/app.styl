@@ -1,0 +1,129 @@
+		
+
+// ______ LAYOUT _______
+
+
+html
+	height 100%
+
+body
+	height 100%
+	overflow-x hidden
+	overflow-y auto
+	font-family $mainFont
+	background $mainBgColor
+	
+	&.desktop-mode
+		.ui-notification
+			width 450px
+	
+	&.mobile-mode
+		// 
+
+main
+
+	&.main-preloader-active
+		position absolute
+		overflow hidden
+		width 100%
+		height 100%
+		min-width 0px
+		
+	&.popup-is-open
+
+		[ui-view='pages']
+			overflow hidden
+
+		[ui-view="popups"]
+			z-index 999
+
+	.ui-notification
+		
+		background $colorGrayDark
+
+		h3
+			color #FFF
+			font-weight normal
+		a
+			text-decoration none
+			border-bottom 1px solid #FFF
+			&:hover
+				text-decoration none
+				border-bottom 0
+		p
+			font-weight normal
+			
+		&.success,&.info
+			background $colorGreen
+		
+		&.warning
+			background $colorGrayDark
+			
+		&.error
+			background #d9534f
+				
+	.main-container
+
+		position relative
+		width 100%
+		max-width ($maxWidth)px
+		margin 0 auto
+		borderbox()
+
+		&__center
+			display flex
+			align-items center
+			justify-content center
+			flex-grow 1
+
+	[ui-view='pages']
+		
+		display flex
+		flex-direction column
+		justify-content space-between
+		min-height 100vh
+		width 100%
+
+		[ui-view='header']
+
+			width 100%
+			height ($headerHeight)px
+			position relative
+
+
+		[ui-view='content']
+
+			flex-grow 1
+			display flex
+			flex-direction column
+			justify-content space-between
+			position relative
+
+			.main-container, .main-container__center
+				flex-grow 1
+				padding-top 20px
+				padding-bottom 20px
+
+		[ui-view='footer']
+			
+			height ($footerHeight)px
+			width 100%
+			position relative
+
+	[ui-view="popups"]
+		top 0
+		position absolute
+		width 100%
+
+
+// ______ MEDIA _______
+
+
+@media (max-width: ($maxWidth)px)
+
+	.main-container, .main-container__center
+		padding-left 10px
+		padding-right 10px
+
+
+

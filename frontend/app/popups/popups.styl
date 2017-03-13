@@ -1,0 +1,54 @@
+
+[ui-view="popups"]
+
+	.popup-bg
+		z-index 998
+		position fixed
+		top 0
+		min-height 100%
+		min-width 100%
+		overflow-y auto
+		overflow-x hidden
+		-webkit-overflow-scrolling touch
+		background-rgba(#000,'000',0.7)
+		
+		&.without-previous-state
+			background rgb(34, 34, 34)
+				
+	.popup-close
+		cursor pointer
+		position absolute
+		right -45px
+		top 0
+		background url("~img/close-popup.png") no-repeat
+		width 25px
+		height 25px
+		background-size contain
+		
+	.popup-inner
+		borderbox()
+		position absolute
+		min-width 200px
+		z-index 999
+		clearfix()
+		
+	.popup-content
+		padding 40px
+		borderbox()
+		
+
+@media (max-width: 750px)
+	[ui-view="popups"]
+		.popup-close
+			right 0
+			top -45px
+
+		.popup-inner
+			min-width auto !important
+			
+		.popup-content
+			padding 20px 10px
+
+
+
+
